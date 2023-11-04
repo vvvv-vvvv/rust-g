@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - master
+    - build
   pull_request:
     branches:
     - master
@@ -39,7 +40,7 @@ jobs:
         with:
           toolchain: stable
           command: build
-          args: --target i686-pc-windows-msvc --release
+          args: --target i686-pc-windows-msvc --release --features pathfinder
 
       - uses: actions/upload-artifact@v3
         with:
@@ -101,7 +102,7 @@ jobs:
         with:
           toolchain: stable
           command: build
-          args: --target i686-unknown-linux-gnu --release
+          args: --target i686-unknown-linux-gnu --release --features pathfinder
 
       - uses: actions/upload-artifact@v3
         with:
